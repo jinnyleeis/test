@@ -2,6 +2,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './global.css';
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const suit = localFont({
 	src: './fonts/SUIT-Variable.woff2',
@@ -30,6 +31,7 @@ export default function RootLayout({
 	return (
 		// html 태그에 두 CSS 변수를 모두 포함
 		<html lang='en' className={`${suit.variable} ${pretendard.variable}`}>
+			<GoogleTagManager gtmId="GTM-PFB33TG8" />
 			<body className={suit.className}>{children}</body>
 		</html>
 	);
